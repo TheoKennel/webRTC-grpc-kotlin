@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package grpc;
+
+option java_multiple_files = true;
+option optimize_for = LITE_RUNTIME;
+
+service SignalingService {
+    rpc Signal(stream SignalingMessage) returns (stream SignalingMessage);
+}
+
+message SignalingMessage {
+    string senderId = 1;
+    string targetId = 2;
+    string type = 3;
+    string sdpOrCandidate = 4;
+}
+
+
