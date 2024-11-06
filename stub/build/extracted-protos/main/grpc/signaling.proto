@@ -2,18 +2,32 @@ syntax = "proto3";
 
 package grpc;
 
+import "google/protobuf/any.proto";
+import "google/protobuf/empty.proto";
+
+
 option java_multiple_files = true;
 option optimize_for = LITE_RUNTIME;
 
 service SignalingService {
-    rpc Signal(stream SignalingMessage) returns (stream SignalingMessage);
+    rpc RegisterClient(Client) returns (google.protobuf.Empty);
+    rpc GetConnectedClient(stream google.protobuf.Empty) returns (stream ClientList);
+    rpc ForwardMessage(stream SignalingMessage) returns (stream SignalingMessage);
 }
 
 message SignalingMessage {
-    string senderId = 1;
-    string targetId = 2;
-    string type = 3;
-    string sdpOrCandidate = 4;
+    string senderSerial = 1;
+    string serialReceiver = 2;
+    google.protobuf.Any payload = 3;
+}
+
+message ClientList {
+    repeated Client clients = 1;
+}
+
+message Client {
+    string serial = 1;
+    string app = 2;
 }
 
 

@@ -9,50 +9,37 @@ public interface SignalingMessageOrBuilder extends
     com.google.protobuf.MessageLiteOrBuilder {
 
   /**
-   * <code>string senderId = 1;</code>
-   * @return The senderId.
+   * <code>string senderSerial = 1;</code>
+   * @return The senderSerial.
    */
-  java.lang.String getSenderId();
+  java.lang.String getSenderSerial();
   /**
-   * <code>string senderId = 1;</code>
-   * @return The bytes for senderId.
+   * <code>string senderSerial = 1;</code>
+   * @return The bytes for senderSerial.
    */
   com.google.protobuf.ByteString
-      getSenderIdBytes();
+      getSenderSerialBytes();
 
   /**
-   * <code>string targetId = 2;</code>
-   * @return The targetId.
+   * <code>string serialReceiver = 2;</code>
+   * @return The serialReceiver.
    */
-  java.lang.String getTargetId();
+  java.lang.String getSerialReceiver();
   /**
-   * <code>string targetId = 2;</code>
-   * @return The bytes for targetId.
+   * <code>string serialReceiver = 2;</code>
+   * @return The bytes for serialReceiver.
    */
   com.google.protobuf.ByteString
-      getTargetIdBytes();
+      getSerialReceiverBytes();
 
   /**
-   * <code>string type = 3;</code>
-   * @return The type.
+   * <code>.google.protobuf.Any payload = 3;</code>
+   * @return Whether the payload field is set.
    */
-  java.lang.String getType();
+  boolean hasPayload();
   /**
-   * <code>string type = 3;</code>
-   * @return The bytes for type.
+   * <code>.google.protobuf.Any payload = 3;</code>
+   * @return The payload.
    */
-  com.google.protobuf.ByteString
-      getTypeBytes();
-
-  /**
-   * <code>string sdpOrCandidate = 4;</code>
-   * @return The sdpOrCandidate.
-   */
-  java.lang.String getSdpOrCandidate();
-  /**
-   * <code>string sdpOrCandidate = 4;</code>
-   * @return The bytes for sdpOrCandidate.
-   */
-  com.google.protobuf.ByteString
-      getSdpOrCandidateBytes();
+  com.google.protobuf.Any getPayload();
 }

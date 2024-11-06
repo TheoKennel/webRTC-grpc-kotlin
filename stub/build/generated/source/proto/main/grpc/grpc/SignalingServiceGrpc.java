@@ -15,24 +15,84 @@ public final class SignalingServiceGrpc {
   public static final java.lang.String SERVICE_NAME = "grpc.SignalingService";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<grpc.SignalingMessage,
-      grpc.SignalingMessage> getSignalMethod;
+  private static volatile io.grpc.MethodDescriptor<grpc.Client,
+      com.google.protobuf.Empty> getRegisterClientMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Signal",
+      fullMethodName = SERVICE_NAME + '/' + "RegisterClient",
+      requestType = grpc.Client.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<grpc.Client,
+      com.google.protobuf.Empty> getRegisterClientMethod() {
+    io.grpc.MethodDescriptor<grpc.Client, com.google.protobuf.Empty> getRegisterClientMethod;
+    if ((getRegisterClientMethod = SignalingServiceGrpc.getRegisterClientMethod) == null) {
+      synchronized (SignalingServiceGrpc.class) {
+        if ((getRegisterClientMethod = SignalingServiceGrpc.getRegisterClientMethod) == null) {
+          SignalingServiceGrpc.getRegisterClientMethod = getRegisterClientMethod =
+              io.grpc.MethodDescriptor.<grpc.Client, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RegisterClient"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.lite.ProtoLiteUtils.marshaller(
+                  grpc.Client.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.lite.ProtoLiteUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .build();
+        }
+      }
+    }
+    return getRegisterClientMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      grpc.ClientList> getGetConnectedClientMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConnectedClient",
+      requestType = com.google.protobuf.Empty.class,
+      responseType = grpc.ClientList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
+      grpc.ClientList> getGetConnectedClientMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, grpc.ClientList> getGetConnectedClientMethod;
+    if ((getGetConnectedClientMethod = SignalingServiceGrpc.getGetConnectedClientMethod) == null) {
+      synchronized (SignalingServiceGrpc.class) {
+        if ((getGetConnectedClientMethod = SignalingServiceGrpc.getGetConnectedClientMethod) == null) {
+          SignalingServiceGrpc.getGetConnectedClientMethod = getGetConnectedClientMethod =
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, grpc.ClientList>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConnectedClient"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.lite.ProtoLiteUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.lite.ProtoLiteUtils.marshaller(
+                  grpc.ClientList.getDefaultInstance()))
+              .build();
+        }
+      }
+    }
+    return getGetConnectedClientMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<grpc.SignalingMessage,
+      grpc.SignalingMessage> getForwardMessageMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ForwardMessage",
       requestType = grpc.SignalingMessage.class,
       responseType = grpc.SignalingMessage.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
   public static io.grpc.MethodDescriptor<grpc.SignalingMessage,
-      grpc.SignalingMessage> getSignalMethod() {
-    io.grpc.MethodDescriptor<grpc.SignalingMessage, grpc.SignalingMessage> getSignalMethod;
-    if ((getSignalMethod = SignalingServiceGrpc.getSignalMethod) == null) {
+      grpc.SignalingMessage> getForwardMessageMethod() {
+    io.grpc.MethodDescriptor<grpc.SignalingMessage, grpc.SignalingMessage> getForwardMessageMethod;
+    if ((getForwardMessageMethod = SignalingServiceGrpc.getForwardMessageMethod) == null) {
       synchronized (SignalingServiceGrpc.class) {
-        if ((getSignalMethod = SignalingServiceGrpc.getSignalMethod) == null) {
-          SignalingServiceGrpc.getSignalMethod = getSignalMethod =
+        if ((getForwardMessageMethod = SignalingServiceGrpc.getForwardMessageMethod) == null) {
+          SignalingServiceGrpc.getForwardMessageMethod = getForwardMessageMethod =
               io.grpc.MethodDescriptor.<grpc.SignalingMessage, grpc.SignalingMessage>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Signal"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ForwardMessage"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.lite.ProtoLiteUtils.marshaller(
                   grpc.SignalingMessage.getDefaultInstance()))
@@ -42,7 +102,7 @@ public final class SignalingServiceGrpc {
         }
       }
     }
-    return getSignalMethod;
+    return getForwardMessageMethod;
   }
 
   /**
@@ -95,9 +155,23 @@ public final class SignalingServiceGrpc {
 
     /**
      */
-    default io.grpc.stub.StreamObserver<grpc.SignalingMessage> signal(
+    default void registerClient(grpc.Client request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRegisterClientMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<com.google.protobuf.Empty> getConnectedClient(
+        io.grpc.stub.StreamObserver<grpc.ClientList> responseObserver) {
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getGetConnectedClientMethod(), responseObserver);
+    }
+
+    /**
+     */
+    default io.grpc.stub.StreamObserver<grpc.SignalingMessage> forwardMessage(
         io.grpc.stub.StreamObserver<grpc.SignalingMessage> responseObserver) {
-      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getSignalMethod(), responseObserver);
+      return io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall(getForwardMessageMethod(), responseObserver);
     }
   }
 
@@ -130,10 +204,26 @@ public final class SignalingServiceGrpc {
 
     /**
      */
-    public io.grpc.stub.StreamObserver<grpc.SignalingMessage> signal(
+    public void registerClient(grpc.Client request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRegisterClientMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<com.google.protobuf.Empty> getConnectedClient(
+        io.grpc.stub.StreamObserver<grpc.ClientList> responseObserver) {
+      return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
+          getChannel().newCall(getGetConnectedClientMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     */
+    public io.grpc.stub.StreamObserver<grpc.SignalingMessage> forwardMessage(
         io.grpc.stub.StreamObserver<grpc.SignalingMessage> responseObserver) {
       return io.grpc.stub.ClientCalls.asyncBidiStreamingCall(
-          getChannel().newCall(getSignalMethod(), getCallOptions()), responseObserver);
+          getChannel().newCall(getForwardMessageMethod(), getCallOptions()), responseObserver);
     }
   }
 
@@ -152,6 +242,13 @@ public final class SignalingServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new SignalingServiceBlockingStub(channel, callOptions);
     }
+
+    /**
+     */
+    public com.google.protobuf.Empty registerClient(grpc.Client request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRegisterClientMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -169,9 +266,19 @@ public final class SignalingServiceGrpc {
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new SignalingServiceFutureStub(channel, callOptions);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> registerClient(
+        grpc.Client request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRegisterClientMethod(), getCallOptions()), request);
+    }
   }
 
-  private static final int METHODID_SIGNAL = 0;
+  private static final int METHODID_REGISTER_CLIENT = 0;
+  private static final int METHODID_GET_CONNECTED_CLIENT = 1;
+  private static final int METHODID_FORWARD_MESSAGE = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -190,6 +297,10 @@ public final class SignalingServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_REGISTER_CLIENT:
+          serviceImpl.registerClient((grpc.Client) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -200,8 +311,11 @@ public final class SignalingServiceGrpc {
     public io.grpc.stub.StreamObserver<Req> invoke(
         io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_SIGNAL:
-          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.signal(
+        case METHODID_GET_CONNECTED_CLIENT:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.getConnectedClient(
+              (io.grpc.stub.StreamObserver<grpc.ClientList>) responseObserver);
+        case METHODID_FORWARD_MESSAGE:
+          return (io.grpc.stub.StreamObserver<Req>) serviceImpl.forwardMessage(
               (io.grpc.stub.StreamObserver<grpc.SignalingMessage>) responseObserver);
         default:
           throw new AssertionError();
@@ -212,12 +326,26 @@ public final class SignalingServiceGrpc {
   public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
-          getSignalMethod(),
+          getRegisterClientMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              grpc.Client,
+              com.google.protobuf.Empty>(
+                service, METHODID_REGISTER_CLIENT)))
+        .addMethod(
+          getGetConnectedClientMethod(),
+          io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
+            new MethodHandlers<
+              com.google.protobuf.Empty,
+              grpc.ClientList>(
+                service, METHODID_GET_CONNECTED_CLIENT)))
+        .addMethod(
+          getForwardMessageMethod(),
           io.grpc.stub.ServerCalls.asyncBidiStreamingCall(
             new MethodHandlers<
               grpc.SignalingMessage,
               grpc.SignalingMessage>(
-                service, METHODID_SIGNAL)))
+                service, METHODID_FORWARD_MESSAGE)))
         .build();
   }
 
@@ -230,7 +358,9 @@ public final class SignalingServiceGrpc {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .addMethod(getSignalMethod())
+              .addMethod(getRegisterClientMethod())
+              .addMethod(getGetConnectedClientMethod())
+              .addMethod(getForwardMessageMethod())
               .build();
         }
       }

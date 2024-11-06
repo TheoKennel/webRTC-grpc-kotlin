@@ -28,74 +28,67 @@ public object SignalingMessageKt {
     internal fun _build(): grpc.SignalingMessage = _builder.build()
 
     /**
-     * `string senderId = 1;`
+     * `string senderSerial = 1;`
      */
-    public var senderId: kotlin.String
-      @JvmName("getSenderId")
-      get() = _builder.getSenderId()
-      @JvmName("setSenderId")
+    public var senderSerial: kotlin.String
+      @JvmName("getSenderSerial")
+      get() = _builder.getSenderSerial()
+      @JvmName("setSenderSerial")
       set(value) {
-        _builder.setSenderId(value)
+        _builder.setSenderSerial(value)
       }
     /**
-     * `string senderId = 1;`
+     * `string senderSerial = 1;`
      */
-    public fun clearSenderId() {
-      _builder.clearSenderId()
+    public fun clearSenderSerial() {
+      _builder.clearSenderSerial()
     }
 
     /**
-     * `string targetId = 2;`
+     * `string serialReceiver = 2;`
      */
-    public var targetId: kotlin.String
-      @JvmName("getTargetId")
-      get() = _builder.getTargetId()
-      @JvmName("setTargetId")
+    public var serialReceiver: kotlin.String
+      @JvmName("getSerialReceiver")
+      get() = _builder.getSerialReceiver()
+      @JvmName("setSerialReceiver")
       set(value) {
-        _builder.setTargetId(value)
+        _builder.setSerialReceiver(value)
       }
     /**
-     * `string targetId = 2;`
+     * `string serialReceiver = 2;`
      */
-    public fun clearTargetId() {
-      _builder.clearTargetId()
+    public fun clearSerialReceiver() {
+      _builder.clearSerialReceiver()
     }
 
     /**
-     * `string type = 3;`
+     * `.google.protobuf.Any payload = 3;`
      */
-    public var type: kotlin.String
-      @JvmName("getType")
-      get() = _builder.getType()
-      @JvmName("setType")
+    public var payload: com.google.protobuf.Any
+      @JvmName("getPayload")
+      get() = _builder.getPayload()
+      @JvmName("setPayload")
       set(value) {
-        _builder.setType(value)
+        _builder.setPayload(value)
       }
     /**
-     * `string type = 3;`
+     * `.google.protobuf.Any payload = 3;`
      */
-    public fun clearType() {
-      _builder.clearType()
+    public fun clearPayload() {
+      _builder.clearPayload()
     }
-
     /**
-     * `string sdpOrCandidate = 4;`
+     * `.google.protobuf.Any payload = 3;`
+     * @return Whether the payload field is set.
      */
-    public var sdpOrCandidate: kotlin.String
-      @JvmName("getSdpOrCandidate")
-      get() = _builder.getSdpOrCandidate()
-      @JvmName("setSdpOrCandidate")
-      set(value) {
-        _builder.setSdpOrCandidate(value)
-      }
-    /**
-     * `string sdpOrCandidate = 4;`
-     */
-    public fun clearSdpOrCandidate() {
-      _builder.clearSdpOrCandidate()
+    public fun hasPayload(): kotlin.Boolean {
+      return _builder.hasPayload()
     }
   }
 }
 public inline fun grpc.SignalingMessage.copy(block: `grpc`.SignalingMessageKt.Dsl.() -> kotlin.Unit): grpc.SignalingMessage =
   `grpc`.SignalingMessageKt.Dsl._create(this.toBuilder()).apply { block() }._build()
+
+public val grpc.SignalingMessageOrBuilder.payloadOrNull: com.google.protobuf.Any?
+  get() = if (hasPayload()) getPayload() else null
 

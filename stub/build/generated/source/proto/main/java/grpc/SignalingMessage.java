@@ -13,197 +13,148 @@ public  final class SignalingMessage extends
     // @@protoc_insertion_point(message_implements:grpc.SignalingMessage)
     SignalingMessageOrBuilder {
   private SignalingMessage() {
-    senderId_ = "";
-    targetId_ = "";
-    type_ = "";
-    sdpOrCandidate_ = "";
+    senderSerial_ = "";
+    serialReceiver_ = "";
   }
-  public static final int SENDERID_FIELD_NUMBER = 1;
-  private java.lang.String senderId_;
+  private int bitField0_;
+  public static final int SENDERSERIAL_FIELD_NUMBER = 1;
+  private java.lang.String senderSerial_;
   /**
-   * <code>string senderId = 1;</code>
-   * @return The senderId.
+   * <code>string senderSerial = 1;</code>
+   * @return The senderSerial.
    */
   @java.lang.Override
-  public java.lang.String getSenderId() {
-    return senderId_;
+  public java.lang.String getSenderSerial() {
+    return senderSerial_;
   }
   /**
-   * <code>string senderId = 1;</code>
-   * @return The bytes for senderId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSenderIdBytes() {
-    return com.google.protobuf.ByteString.copyFromUtf8(senderId_);
-  }
-  /**
-   * <code>string senderId = 1;</code>
-   * @param value The senderId to set.
-   */
-  private void setSenderId(
-      java.lang.String value) {
-    java.lang.Class<?> valueClass = value.getClass();
-  
-    senderId_ = value;
-  }
-  /**
-   * <code>string senderId = 1;</code>
-   */
-  private void clearSenderId() {
-
-    senderId_ = getDefaultInstance().getSenderId();
-  }
-  /**
-   * <code>string senderId = 1;</code>
-   * @param value The bytes for senderId to set.
-   */
-  private void setSenderIdBytes(
-      com.google.protobuf.ByteString value) {
-    checkByteStringIsUtf8(value);
-    senderId_ = value.toStringUtf8();
-
-  }
-
-  public static final int TARGETID_FIELD_NUMBER = 2;
-  private java.lang.String targetId_;
-  /**
-   * <code>string targetId = 2;</code>
-   * @return The targetId.
-   */
-  @java.lang.Override
-  public java.lang.String getTargetId() {
-    return targetId_;
-  }
-  /**
-   * <code>string targetId = 2;</code>
-   * @return The bytes for targetId.
+   * <code>string senderSerial = 1;</code>
+   * @return The bytes for senderSerial.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTargetIdBytes() {
-    return com.google.protobuf.ByteString.copyFromUtf8(targetId_);
+      getSenderSerialBytes() {
+    return com.google.protobuf.ByteString.copyFromUtf8(senderSerial_);
   }
   /**
-   * <code>string targetId = 2;</code>
-   * @param value The targetId to set.
+   * <code>string senderSerial = 1;</code>
+   * @param value The senderSerial to set.
    */
-  private void setTargetId(
+  private void setSenderSerial(
       java.lang.String value) {
     java.lang.Class<?> valueClass = value.getClass();
   
-    targetId_ = value;
+    senderSerial_ = value;
   }
   /**
-   * <code>string targetId = 2;</code>
+   * <code>string senderSerial = 1;</code>
    */
-  private void clearTargetId() {
+  private void clearSenderSerial() {
 
-    targetId_ = getDefaultInstance().getTargetId();
+    senderSerial_ = getDefaultInstance().getSenderSerial();
   }
   /**
-   * <code>string targetId = 2;</code>
-   * @param value The bytes for targetId to set.
+   * <code>string senderSerial = 1;</code>
+   * @param value The bytes for senderSerial to set.
    */
-  private void setTargetIdBytes(
+  private void setSenderSerialBytes(
       com.google.protobuf.ByteString value) {
     checkByteStringIsUtf8(value);
-    targetId_ = value.toStringUtf8();
+    senderSerial_ = value.toStringUtf8();
 
   }
 
-  public static final int TYPE_FIELD_NUMBER = 3;
-  private java.lang.String type_;
+  public static final int SERIALRECEIVER_FIELD_NUMBER = 2;
+  private java.lang.String serialReceiver_;
   /**
-   * <code>string type = 3;</code>
-   * @return The type.
+   * <code>string serialReceiver = 2;</code>
+   * @return The serialReceiver.
    */
   @java.lang.Override
-  public java.lang.String getType() {
-    return type_;
+  public java.lang.String getSerialReceiver() {
+    return serialReceiver_;
   }
   /**
-   * <code>string type = 3;</code>
-   * @return The bytes for type.
+   * <code>string serialReceiver = 2;</code>
+   * @return The bytes for serialReceiver.
    */
   @java.lang.Override
   public com.google.protobuf.ByteString
-      getTypeBytes() {
-    return com.google.protobuf.ByteString.copyFromUtf8(type_);
+      getSerialReceiverBytes() {
+    return com.google.protobuf.ByteString.copyFromUtf8(serialReceiver_);
   }
   /**
-   * <code>string type = 3;</code>
-   * @param value The type to set.
+   * <code>string serialReceiver = 2;</code>
+   * @param value The serialReceiver to set.
    */
-  private void setType(
+  private void setSerialReceiver(
       java.lang.String value) {
     java.lang.Class<?> valueClass = value.getClass();
   
-    type_ = value;
+    serialReceiver_ = value;
   }
   /**
-   * <code>string type = 3;</code>
+   * <code>string serialReceiver = 2;</code>
    */
-  private void clearType() {
+  private void clearSerialReceiver() {
 
-    type_ = getDefaultInstance().getType();
+    serialReceiver_ = getDefaultInstance().getSerialReceiver();
   }
   /**
-   * <code>string type = 3;</code>
-   * @param value The bytes for type to set.
+   * <code>string serialReceiver = 2;</code>
+   * @param value The bytes for serialReceiver to set.
    */
-  private void setTypeBytes(
+  private void setSerialReceiverBytes(
       com.google.protobuf.ByteString value) {
     checkByteStringIsUtf8(value);
-    type_ = value.toStringUtf8();
+    serialReceiver_ = value.toStringUtf8();
 
   }
 
-  public static final int SDPORCANDIDATE_FIELD_NUMBER = 4;
-  private java.lang.String sdpOrCandidate_;
+  public static final int PAYLOAD_FIELD_NUMBER = 3;
+  private com.google.protobuf.Any payload_;
   /**
-   * <code>string sdpOrCandidate = 4;</code>
-   * @return The sdpOrCandidate.
+   * <code>.google.protobuf.Any payload = 3;</code>
    */
   @java.lang.Override
-  public java.lang.String getSdpOrCandidate() {
-    return sdpOrCandidate_;
+  public boolean hasPayload() {
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>string sdpOrCandidate = 4;</code>
-   * @return The bytes for sdpOrCandidate.
+   * <code>.google.protobuf.Any payload = 3;</code>
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
-      getSdpOrCandidateBytes() {
-    return com.google.protobuf.ByteString.copyFromUtf8(sdpOrCandidate_);
+  public com.google.protobuf.Any getPayload() {
+    return payload_ == null ? com.google.protobuf.Any.getDefaultInstance() : payload_;
   }
   /**
-   * <code>string sdpOrCandidate = 4;</code>
-   * @param value The sdpOrCandidate to set.
+   * <code>.google.protobuf.Any payload = 3;</code>
    */
-  private void setSdpOrCandidate(
-      java.lang.String value) {
-    java.lang.Class<?> valueClass = value.getClass();
-  
-    sdpOrCandidate_ = value;
+  private void setPayload(com.google.protobuf.Any value) {
+    value.getClass();
+  payload_ = value;
+    bitField0_ |= 0x00000001;
+    }
+  /**
+   * <code>.google.protobuf.Any payload = 3;</code>
+   */
+  @java.lang.SuppressWarnings({"ReferenceEquality"})
+  private void mergePayload(com.google.protobuf.Any value) {
+    value.getClass();
+  if (payload_ != null &&
+        payload_ != com.google.protobuf.Any.getDefaultInstance()) {
+      payload_ =
+        com.google.protobuf.Any.newBuilder(payload_).mergeFrom(value).buildPartial();
+    } else {
+      payload_ = value;
+    }
+    bitField0_ |= 0x00000001;
   }
   /**
-   * <code>string sdpOrCandidate = 4;</code>
+   * <code>.google.protobuf.Any payload = 3;</code>
    */
-  private void clearSdpOrCandidate() {
-
-    sdpOrCandidate_ = getDefaultInstance().getSdpOrCandidate();
-  }
-  /**
-   * <code>string sdpOrCandidate = 4;</code>
-   * @param value The bytes for sdpOrCandidate to set.
-   */
-  private void setSdpOrCandidateBytes(
-      com.google.protobuf.ByteString value) {
-    checkByteStringIsUtf8(value);
-    sdpOrCandidate_ = value.toStringUtf8();
-
+  private void clearPayload() {  payload_ = null;
+    bitField0_ = (bitField0_ & ~0x00000001);
   }
 
   public static grpc.SignalingMessage parseFrom(
@@ -304,198 +255,147 @@ public  final class SignalingMessage extends
 
 
     /**
-     * <code>string senderId = 1;</code>
-     * @return The senderId.
+     * <code>string senderSerial = 1;</code>
+     * @return The senderSerial.
      */
     @java.lang.Override
-    public java.lang.String getSenderId() {
-      return instance.getSenderId();
+    public java.lang.String getSenderSerial() {
+      return instance.getSenderSerial();
     }
     /**
-     * <code>string senderId = 1;</code>
-     * @return The bytes for senderId.
+     * <code>string senderSerial = 1;</code>
+     * @return The bytes for senderSerial.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getSenderIdBytes() {
-      return instance.getSenderIdBytes();
+        getSenderSerialBytes() {
+      return instance.getSenderSerialBytes();
     }
     /**
-     * <code>string senderId = 1;</code>
-     * @param value The senderId to set.
+     * <code>string senderSerial = 1;</code>
+     * @param value The senderSerial to set.
      * @return This builder for chaining.
      */
-    public Builder setSenderId(
+    public Builder setSenderSerial(
         java.lang.String value) {
       copyOnWrite();
-      instance.setSenderId(value);
+      instance.setSenderSerial(value);
       return this;
     }
     /**
-     * <code>string senderId = 1;</code>
+     * <code>string senderSerial = 1;</code>
      * @return This builder for chaining.
      */
-    public Builder clearSenderId() {
+    public Builder clearSenderSerial() {
       copyOnWrite();
-      instance.clearSenderId();
+      instance.clearSenderSerial();
       return this;
     }
     /**
-     * <code>string senderId = 1;</code>
-     * @param value The bytes for senderId to set.
+     * <code>string senderSerial = 1;</code>
+     * @param value The bytes for senderSerial to set.
      * @return This builder for chaining.
      */
-    public Builder setSenderIdBytes(
+    public Builder setSenderSerialBytes(
         com.google.protobuf.ByteString value) {
       copyOnWrite();
-      instance.setSenderIdBytes(value);
+      instance.setSenderSerialBytes(value);
       return this;
     }
 
     /**
-     * <code>string targetId = 2;</code>
-     * @return The targetId.
+     * <code>string serialReceiver = 2;</code>
+     * @return The serialReceiver.
      */
     @java.lang.Override
-    public java.lang.String getTargetId() {
-      return instance.getTargetId();
+    public java.lang.String getSerialReceiver() {
+      return instance.getSerialReceiver();
     }
     /**
-     * <code>string targetId = 2;</code>
-     * @return The bytes for targetId.
+     * <code>string serialReceiver = 2;</code>
+     * @return The bytes for serialReceiver.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getTargetIdBytes() {
-      return instance.getTargetIdBytes();
+        getSerialReceiverBytes() {
+      return instance.getSerialReceiverBytes();
     }
     /**
-     * <code>string targetId = 2;</code>
-     * @param value The targetId to set.
+     * <code>string serialReceiver = 2;</code>
+     * @param value The serialReceiver to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetId(
+    public Builder setSerialReceiver(
         java.lang.String value) {
       copyOnWrite();
-      instance.setTargetId(value);
+      instance.setSerialReceiver(value);
       return this;
     }
     /**
-     * <code>string targetId = 2;</code>
+     * <code>string serialReceiver = 2;</code>
      * @return This builder for chaining.
      */
-    public Builder clearTargetId() {
+    public Builder clearSerialReceiver() {
       copyOnWrite();
-      instance.clearTargetId();
+      instance.clearSerialReceiver();
       return this;
     }
     /**
-     * <code>string targetId = 2;</code>
-     * @param value The bytes for targetId to set.
+     * <code>string serialReceiver = 2;</code>
+     * @param value The bytes for serialReceiver to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetIdBytes(
+    public Builder setSerialReceiverBytes(
         com.google.protobuf.ByteString value) {
       copyOnWrite();
-      instance.setTargetIdBytes(value);
+      instance.setSerialReceiverBytes(value);
       return this;
     }
 
     /**
-     * <code>string type = 3;</code>
-     * @return The type.
+     * <code>.google.protobuf.Any payload = 3;</code>
      */
     @java.lang.Override
-    public java.lang.String getType() {
-      return instance.getType();
+    public boolean hasPayload() {
+      return instance.hasPayload();
     }
     /**
-     * <code>string type = 3;</code>
-     * @return The bytes for type.
+     * <code>.google.protobuf.Any payload = 3;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTypeBytes() {
-      return instance.getTypeBytes();
+    public com.google.protobuf.Any getPayload() {
+      return instance.getPayload();
     }
     /**
-     * <code>string type = 3;</code>
-     * @param value The type to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Any payload = 3;</code>
      */
-    public Builder setType(
-        java.lang.String value) {
+    public Builder setPayload(com.google.protobuf.Any value) {
       copyOnWrite();
-      instance.setType(value);
+      instance.setPayload(value);
+      return this;
+      }
+    /**
+     * <code>.google.protobuf.Any payload = 3;</code>
+     */
+    public Builder setPayload(
+        com.google.protobuf.Any.Builder builderForValue) {
+      copyOnWrite();
+      instance.setPayload(builderForValue.build());
       return this;
     }
     /**
-     * <code>string type = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Any payload = 3;</code>
      */
-    public Builder clearType() {
+    public Builder mergePayload(com.google.protobuf.Any value) {
       copyOnWrite();
-      instance.clearType();
+      instance.mergePayload(value);
       return this;
     }
     /**
-     * <code>string type = 3;</code>
-     * @param value The bytes for type to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Any payload = 3;</code>
      */
-    public Builder setTypeBytes(
-        com.google.protobuf.ByteString value) {
-      copyOnWrite();
-      instance.setTypeBytes(value);
-      return this;
-    }
-
-    /**
-     * <code>string sdpOrCandidate = 4;</code>
-     * @return The sdpOrCandidate.
-     */
-    @java.lang.Override
-    public java.lang.String getSdpOrCandidate() {
-      return instance.getSdpOrCandidate();
-    }
-    /**
-     * <code>string sdpOrCandidate = 4;</code>
-     * @return The bytes for sdpOrCandidate.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getSdpOrCandidateBytes() {
-      return instance.getSdpOrCandidateBytes();
-    }
-    /**
-     * <code>string sdpOrCandidate = 4;</code>
-     * @param value The sdpOrCandidate to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSdpOrCandidate(
-        java.lang.String value) {
-      copyOnWrite();
-      instance.setSdpOrCandidate(value);
-      return this;
-    }
-    /**
-     * <code>string sdpOrCandidate = 4;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearSdpOrCandidate() {
-      copyOnWrite();
-      instance.clearSdpOrCandidate();
-      return this;
-    }
-    /**
-     * <code>string sdpOrCandidate = 4;</code>
-     * @param value The bytes for sdpOrCandidate to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSdpOrCandidateBytes(
-        com.google.protobuf.ByteString value) {
-      copyOnWrite();
-      instance.setSdpOrCandidateBytes(value);
+    public Builder clearPayload() {  copyOnWrite();
+      instance.clearPayload();
       return this;
     }
 
@@ -515,14 +415,14 @@ public  final class SignalingMessage extends
       }
       case BUILD_MESSAGE_INFO: {
           java.lang.Object[] objects = new java.lang.Object[] {
-            "senderId_",
-            "targetId_",
-            "type_",
-            "sdpOrCandidate_",
+            "bitField0_",
+            "senderSerial_",
+            "serialReceiver_",
+            "payload_",
           };
           java.lang.String info =
-              "\u0000\u0004\u0000\u0000\u0001\u0004\u0004\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
-              "\u0003\u0208\u0004\u0208";
+              "\u0000\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001\u0208\u0002\u0208" +
+              "\u0003\u1009\u0000";
           return newMessageInfo(DEFAULT_INSTANCE, info, objects);
       }
       // fall through

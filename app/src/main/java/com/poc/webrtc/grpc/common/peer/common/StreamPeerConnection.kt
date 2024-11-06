@@ -33,6 +33,7 @@ class StreamPeerConnection(
     private val onStreamAdded: ((MediaStream) -> Unit)?,
     private val onNegotiationNeeded: ((StreamPeerConnection, StreamPeerType) -> Unit)?,
     private val onIceCandidate: ((IceCandidate, StreamPeerType) -> Unit)?,
+    private val onVideoTrack: ((RtpTransceiver?) -> Unit)?,
 ) : PeerConnection.Observer {
     private lateinit var connection: PeerConnection
 
@@ -178,9 +179,6 @@ class StreamPeerConnection(
      */
     override fun onAddStream(stream: MediaStream?) {
         println { "[onAddStream] #p2p; #$typeTag; stream: $stream" }
-        if (stream != null) {
-            onStreamAdded?.invoke(stream)
-        }
     }
 
     /**
@@ -248,9 +246,11 @@ class StreamPeerConnection(
 
     override fun onTrack(transceiver: RtpTransceiver?) {
         println { "[onTrack] #p2p; #$typeTag; transceiver: $transceiver" }
+        onVideoTrack?.invoke(transceiver)
     }
 
     /**
+     *
      * Domain - [PeerConnection] and [PeerConnection.Observer] related callbacks.
      */
     override fun onRemoveTrack(receiver: RtpReceiver?) {
